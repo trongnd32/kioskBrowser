@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="addressBar">
+      <button id="backBtn" class="btn" title="Back">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button id="forwardBtn" class="btn" title="Forward">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+      <input id="address" type="text" placeholder="Enter address" class="address"/>
+      <a href="#open-modal">
+      <button id="closeBtn" class="btn" title="Close application">
+          <i class="fas fa-times"></i>
+        </button>
+      </a>
+    </div>
+
+    <!-- close dialog -->
+    <div id="open-modal" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><i class="fas fa-times"></i></a>
+        <h1>Cảnh báo!</h1>
+        <div>Bạn có chắc chắn muốn đóng ứng dụng? Hãy đảm bảo đã làm xong bài kiểm tra trước khi đóng ứng dụng</div>
+        <div></div>
+        <button id="acceptCloseApp" class="oulined-btn">Đóng ứng dụng</button>
+      </div>
+    </div>
+
+    <webview id="webview" autosize="on"
+      src="https://www.github.com"
+      data-home="https://www.github.com"
+    ></webview>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
