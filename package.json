@@ -22,22 +22,26 @@
     "portable": {
       "artifactName": "online_edu_portable.exe"
     },
-    "directories": {
-      "output": "electron/output",
-      "app": "electron/app",
-      "buildResources": "electron/buildResources"
-    }
+    "extraResources": [
+      {
+        "from": "./function/win32",
+        "to": "function/win32",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
   },
   "repository": "",
   "keywords": [],
   "author": "trongnd",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^13.1.6"
+    "electron": "^13.1.6",
+    "electron-builder": "^22.11.7"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "electron-builder": "^22.11.7",
     "node-fetch": "^2.6.1"
   }
 }

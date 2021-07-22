@@ -27,14 +27,13 @@ if (!gotTheLock) {
 function createWindow() {
     if(os.platform() == "win32") {
         // run keymap
-        execFile("./funtional/win32/essential.exe", (error, stdout, stderr) => {
+        execFile(path.join(path.dirname(__dirname),"function/win32", "essential.exe"), (error, stdout, stderr) => {
             if (error) {
-                throw error;
+                // throw error;
             }
-            console.log(stdout);
         });
     }
-    console.log("create windows")
+
     win = new BrowserWindow({
         // alwaysOnTop: true, // enable always on top to prevent other windows from appearing above it
         // kiosk: true, // enable kiosk mode, makes it full screen and what not
@@ -72,7 +71,7 @@ function createWindow() {
 }
 
 app.on('before-quit', event => {
-    event.preventDefault() // prevent the process from ending
+    // event.preventDefault() // prevent the process from ending
 })
 
 app.on('window-all-closed', () => {
