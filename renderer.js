@@ -3,6 +3,7 @@ let backBtn = document.getElementById("backBtn")
 let forwardBtn = document.getElementById("forwardBtn")
 let address = document.getElementById("address")
 let closeBtn = document.getElementById("closeBtn")
+let closeDialog = document.getElementById("open-model")
 let acceptCloseAppBtn = document.getElementById("acceptCloseApp")
 
 function onClickGoBack() {
@@ -68,9 +69,25 @@ function closeApp() {
     window.close()
 }
 
+function keyPress(event) {
+    // window.api.send('keypress', event.keyCode)
+    console.log("pressed: " + event.keyCode)
+    // event.preventDefault();
+    switch(event.keyCode) {
+        case 17: {break;}
+        case 91: {break;}
+        case 18: {break;}
+    }
+}
+
+function openCloseDialog() {
+    closeDialog.target();
+}
+
 backBtn.addEventListener('click', onClickGoBack)
 forwardBtn.addEventListener('click', onClickGoForward)
 webview.addEventListener('did-start-loading', loadstart)
 webview.addEventListener('did-stop-loading', loadstop)
 address.addEventListener('keydown', updateURL)
 acceptCloseAppBtn.addEventListener('click', closeApp)
+document.addEventListener('keydown', keyPress)

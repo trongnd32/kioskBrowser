@@ -1,10 +1,32 @@
 {
-  "name": "online-contest",
+  "name": "online-edu",
   "version": "1.0.0",
-  "description": "Electron application for online contest",
+  "description": "Electron application for online education",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "trongnd.onlineedu",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "requestedExecutionLevel": "requireAdministrator",
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "online_edu_portable.exe"
+    },
+    "directories": {
+      "output": "electron/output",
+      "app": "electron/app",
+      "buildResources": "electron/buildResources"
+    }
   },
   "repository": "",
   "keywords": [],
@@ -15,6 +37,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "electron-builder": "^22.11.7",
     "node-fetch": "^2.6.1"
   }
 }
