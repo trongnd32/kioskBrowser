@@ -35,26 +35,26 @@ function createWindow() {
     }
 
     win = new BrowserWindow({
-        // alwaysOnTop: true, // enable always on top to prevent other windows from appearing above it
-        // kiosk: true, // enable kiosk mode, makes it full screen and what not
-        // frame: false, // remove menu
-        // resizable: false,
-        // minimizable: false,
-        // skipTaskbar: true,
+        alwaysOnTop: true, // enable always on top to prevent other windows from appearing above it
+        kiosk: true, // enable kiosk mode, makes it full screen and what not
+        frame: false, // remove menu
+        resizable: false,
+        minimizable: false,
+        skipTaskbar: true,
         webPreferences: {
             webviewTag: true,
             nodeIntegration: false,
             contextIsolation: true,
-            devTools: true,
+            devTools: false,
             preload: path.join(__dirname, "preload.js"),
         },
     })
 
-    // win.setAlwaysOnTop(true, 'screen')
-    // win.setKiosk(true)
-    // win.setSkipTaskbar(true)
+    win.setAlwaysOnTop(true, 'screen')
+    win.setKiosk(true)
+    win.setSkipTaskbar(true)
     win.loadFile('index.html')
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
     win.on('closed', () => {
         win = null
         app.quit()
