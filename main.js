@@ -46,6 +46,7 @@ function createWindow() {
             nodeIntegration: false,
             contextIsolation: true,
             devTools: false,
+            // devTools: true,
             preload: path.join(__dirname, "preload.js"),
         },
     })
@@ -53,8 +54,8 @@ function createWindow() {
     win.setAlwaysOnTop(true, 'screen')
     win.setKiosk(true)
     win.setSkipTaskbar(true)
-    win.loadFile('index.html')
     // win.webContents.openDevTools()
+    win.loadFile('index.html')
     win.on('closed', () => {
         win = null
         app.quit()
@@ -66,7 +67,7 @@ function createWindow() {
     })
 
     win.onbeforeunload = (e) => {
-        console.log('I do not want to be closed')
+        // console.log('I do not want to be closed')
     }
 }
 

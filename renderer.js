@@ -48,7 +48,7 @@ function updateArrow() {
 }
 
 function updateURL(event) {
-    console.log("key down: " + event.keyCode)
+    // console.log("key down: " + event.keyCode)
     if (event.keyCode === 13) {
         address.blur();
         let val = address.value;
@@ -84,10 +84,15 @@ function openCloseDialog() {
     closeDialog.target();
 }
 
+function onFocusAddress() {
+    address.select()
+}
+
 backBtn.addEventListener('click', onClickGoBack)
 forwardBtn.addEventListener('click', onClickGoForward)
 webview.addEventListener('did-start-loading', loadstart)
 webview.addEventListener('did-stop-loading', loadstop)
 address.addEventListener('keydown', updateURL)
+address.addEventListener('focus', onFocusAddress)
 acceptCloseAppBtn.addEventListener('click', closeApp)
-document.addEventListener('keydown', keyPress)
+// document.addEventListener('keydown', keyPress)

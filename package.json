@@ -45,7 +45,6 @@
     "electron-builder": "^22.11.7"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
-    "node-fetch": "^2.6.1"
+    "@fortawesome/fontawesome-free": "^5.15.3"
   }
 }
