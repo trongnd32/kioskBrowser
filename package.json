@@ -1,7 +1,7 @@
 {
-  "name": "online-edu",
+  "name": "athellognosis",
   "version": "1.0.0",
-  "description": "Electron application for online education",
+  "description": "Athellognosis",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -9,7 +9,7 @@
     "dist": "electron-builder"
   },
   "build": {
-    "appId": "trongnd.onlineedu",
+    "appId": "trongnd.athellognosis",
     "mac": {
       "category": "public.app-category.utilities",
       "target": [
@@ -20,11 +20,16 @@
     "win": {
       "requestedExecutionLevel": "requireAdministrator",
       "target": [
-        "portable"
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
       ]
     },
     "portable": {
-      "artifactName": "online_edu_portable.exe"
+      "artifactName": "athellognosis_portable.exe"
     },
     "extraResources": [
       {
